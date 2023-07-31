@@ -10,7 +10,18 @@ const app = express();
 app.use(express.json());
 
 //enable cors
-app.use(cors());
+app.use(
+  cors({
+    origin: [""],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
+
+app.get("/", (req, res) => {
+  console.log("api is woking fine....");
+  res.send("welcome buddy...!");
+});
 
 //registration
 app.post("/register", async (req, res) => {
