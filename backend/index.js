@@ -31,10 +31,12 @@ app.post("/register", async (req, res) => {
     await user.save();
     console.log("registration successful...");
     res.status(201).json({ message: "registration successful..." });
+    alert("registration successful...");
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "registration failed..." });
     console.log("registration failed...");
+    alert("registration failed...");
   }
 });
 
