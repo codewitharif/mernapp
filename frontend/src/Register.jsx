@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/register",
+        "https://mernapi-fawn.vercel.app/register",
         registrationData
       );
       console.log(response.data);
