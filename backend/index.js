@@ -51,8 +51,8 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
-    //res.status(200).json({ message: "login successfull" });
-    res.sendFile("welcome.html");
+    res.status(200).json({ message: "login successfull" });
+    //res.sendFile("welcome.html");
   } catch (error) {
     res.status(500).json({ error: "login failed" });
   }
