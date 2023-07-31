@@ -53,8 +53,10 @@ app.post("/login", async (req, res) => {
       return res.status(401).json({ error: "invalid username or password" });
     }
     res.status(200).json({ message: "login successfull" });
+    alert("login successfull");
   } catch (error) {
     res.status(500).json({ error: "login failed" });
+    alert("login failed");
   }
 });
 
