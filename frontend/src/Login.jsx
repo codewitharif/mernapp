@@ -13,7 +13,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://mernapi-fawn.vercel.app/login",
+        "https://mernapp-backend.vercel.app/login",
         loginData
       );
 
