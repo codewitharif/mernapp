@@ -31,9 +31,7 @@ app.post("/register", async (req, res) => {
     await user.save();
     console.log("registration successful...");
     res.status(201).json({ message: "registration successful..." });
-    alert("registration successful...");
   } catch (error) {
-    alert("registration failed...");
     console.log(error);
     res.status(500).json({ error: "registration failed..." });
   }
@@ -53,10 +51,8 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
-    alert("login successfull");
     res.status(200).json({ message: "login successfull" });
   } catch (error) {
-    alert("login failed");
     res.status(500).json({ error: "login failed" });
   }
 });
