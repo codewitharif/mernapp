@@ -20,13 +20,13 @@ const Login = () => {
       const { success, message } = response.data;
 
       if (success) {
-        console.alert("login successfully");
+        window.alert("login successfully");
         console.log("login successfully");
       } else {
         console.log(message);
       }
     } catch (error) {
-      console.alert("login error");
+      window.alert("login error");
       console.log("login error", error);
     }
     setLoginData({
