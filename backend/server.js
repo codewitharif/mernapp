@@ -20,7 +20,7 @@ app.use(
 
 app.get("/", (req, res) => {
   console.log("api is woking fine....");
-  res.send("welcome buddy...!");
+  res.json("welcome buddy...!");
 });
 
 //registration
