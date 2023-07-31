@@ -12,7 +12,7 @@ app.use(express.json());
 //enable cors
 app.use(
   cors({
-    origin: ["https://mernapp-frontend.vercel.app/"],
+    origin: ["https://mernapp-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
