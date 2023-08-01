@@ -21,8 +21,7 @@ const Login = () => {
       const { success, message } = response.data;
 
       if (success) {
-        //console.log("login successfully");
-        <Success />;
+        console.log("login request sent....");
       } else {
         console.log(message);
       }
