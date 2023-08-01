@@ -4,11 +4,8 @@ const cors = require("cors");
 const connectDB = require("./db/dbConnection");
 const User = require("./db/user");
 const path = require("path");
-const bodyParser = require("body-parser");
 
 const app = express();
-
-const publicPath = path.join(__dirname, "public");
 
 //middleware for parsing json
 app.use(express.json());
@@ -17,10 +14,6 @@ app.use(
     extended: true,
   })
 );
-
-//app.use(express.static(publicPath));
-
-// success page
 
 //enable cors
 app.use(
@@ -34,11 +27,6 @@ app.use(
 app.get("/", (req, res) => {
   console.log("api is woking fine....");
   res.json("welcome buddy...!");
-});
-
-app.get("/success", (req, res) => {
-  console.log("home page is here....");
-  res.send("welcome buddy...!");
 });
 
 //registration
@@ -69,11 +57,8 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
-    res.status(200).sendFile(`${publicPath}/home.html`);
 
-    //res.sendFile(successPage);
-    //res.status(200).send({ message:"login successfull brother" });
-    //res.sendFile("welcome.html");
+    res.status(200).send({ message: "login successfull brother" });
   } catch (error) {
     res.status(500).json({ error: "login failed" });
   }
