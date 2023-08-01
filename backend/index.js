@@ -61,7 +61,7 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
-    res.status(200).redirect("/welcome.html");
+    res.status(200).redirect(successPage);
 
     //res.sendFile(successPage);
     //res.status(200).send({ message:"login successfull brother" });
