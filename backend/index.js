@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
   res.json("welcome buddy...!");
 });
 
-app.get("/home", (req, res) => {
+app.get("/success", (req, res) => {
   console.log("home page is here....");
   res.send("welcome buddy...!");
 });
