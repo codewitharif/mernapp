@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Success from "./Success";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -21,6 +22,7 @@ const Login = () => {
 
       if (success) {
         console.log("login successfully");
+        <Success />;
       } else {
         console.log(message);
       }
