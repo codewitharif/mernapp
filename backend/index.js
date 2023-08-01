@@ -11,6 +11,11 @@ const successPage = path.join(__dirname, "welcome.html");
 
 //middleware for parsing json
 app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 //enable cors
 app.use(
