@@ -54,7 +54,10 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
-    res.sendFile(successPage);
+    res.write("cool");
+    res.write("mja aaya");
+    res.send();
+    //res.sendFile(successPage);
     //res.status(200).json({ message: "login successfull brother" });
     //res.sendFile("welcome.html");
   } catch (error) {
