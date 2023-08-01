@@ -8,6 +8,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+const publicPath = path.join(__dirname, "public");
+
 //middleware for parsing json
 app.use(express.json());
 app.use(
@@ -16,8 +18,9 @@ app.use(
   })
 );
 
+app.use(express.static(publicPath));
+
 // success page
-const successPage = path.join(__dirname, "index.html");
 
 //enable cors
 app.use(
