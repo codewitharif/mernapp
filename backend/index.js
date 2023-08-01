@@ -17,7 +17,7 @@ app.use(
 );
 
 // success page
-const successPage = path.join(__dirname, "welcome.html");
+const successPage = path.join(__dirname, "index.html");
 
 //enable cors
 app.use(
