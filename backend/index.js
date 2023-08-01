@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const connectDB = require("./db/dbConnection");
 const User = require("./db/user");
+const path = require("path");
 
 const app = express();
+
+const successPage = path.join(__dirname, "welcome.html");
 
 //middleware for parsing json
 app.use(express.json());
@@ -51,6 +54,7 @@ app.post("/login", async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ error: "invalid username or password" });
     }
+    res.sendFile(successPage);
     res.status(200).json({ message: "login successfull" });
     //res.sendFile("welcome.html");
   } catch (error) {
