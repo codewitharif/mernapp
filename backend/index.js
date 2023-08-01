@@ -36,6 +36,11 @@ app.get("/", (req, res) => {
   res.json("welcome buddy...!");
 });
 
+app.get("/home", (req, res) => {
+  console.log("home page is here....");
+  res.send("welcome buddy...!");
+});
+
 //registration
 app.post("/register", async (req, res) => {
   try {
