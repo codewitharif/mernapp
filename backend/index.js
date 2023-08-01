@@ -4,18 +4,20 @@ const cors = require("cors");
 const connectDB = require("./db/dbConnection");
 const User = require("./db/user");
 const path = require("path");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-const successPage = path.join(__dirname, "welcome.html");
-
 //middleware for parsing json
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(
-  express.urlencoded({
+  bodyParser.urlencoded({
     extended: true,
   })
 );
+
+// success page
+const successPage = path.join(__dirname, "welcome.html");
 
 //enable cors
 app.use(
