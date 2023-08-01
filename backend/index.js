@@ -63,7 +63,7 @@ app.post("/login", async (req, res) => {
     }
 
     //res.sendFile(successPage);
-    res.status(200).send("login successfull brother");
+    res.status(200).sendFile(successPage);
     //res.sendFile("welcome.html");
   } catch (error) {
     res.status(500).json({ error: "login failed" });
