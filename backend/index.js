@@ -10,7 +10,11 @@ const app = express();
 
 //middleware for parsing json
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 // success page
 const successPage = path.join(__dirname, "welcome.html");
