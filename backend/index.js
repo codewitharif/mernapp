@@ -9,9 +9,9 @@ const bodyParser = require("body-parser");
 const app = express();
 
 //middleware for parsing json
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(
-  bodyParser.urlencoded({
+  express.urlencoded({
     extended: true,
   })
 );
